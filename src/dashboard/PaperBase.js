@@ -4,8 +4,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./PaperBase.css";
+import Content from "./Content";
 
 const drawerWidth = 256;
+const btnSound = () => {
+    let btnAudio = new Audio("/sounds/buttonClick.mp3");
+    btnAudio.play();
+  };
 
 function PaperBase() {
   const [colorMain, setColorMain] = React.useState("#1976d2");
@@ -223,8 +228,7 @@ function PaperBase() {
               bgcolor: "#eaeff1",
             }}
           >
-            Content
-            {/* <Content setSelectedIndex={setSelectedIndex} btnSound={btnSound} /> */}
+            <Content setSelectedIndex={setSelectedIndex} btnSound={btnSound} />
           </Box>
           <Box
             component="footer"
