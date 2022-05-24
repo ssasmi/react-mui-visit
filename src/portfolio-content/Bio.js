@@ -1,7 +1,7 @@
 import { Box, Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-// import { AccountProfile } from "./account-profile";
-// import { AccountProfileDetails } from "./account-profile-details";
+import { AccountProfile } from "./about/account-profile";
+import { AccountProfileDetails } from "./about/account-profile-details";
 //import "./Bio.css";
 
 const Bio = ({ setSelectedIndex, btnSound }) => {
@@ -18,14 +18,14 @@ const Bio = ({ setSelectedIndex, btnSound }) => {
         <Container maxWidth="lg">
           <Grid container spacing={3}>
             <Grid item lg={4} md={6} xs={12}>
-              {/* <AccountProfile /> */}
+              <AccountProfile />
             </Grid>
             <Grid item lg={8} md={6} xs={12}>
-              {/* <AccountProfileDetails */}
-                {/* setSelectedIndex={setSelectedIndex}
+              <AccountProfileDetails
+                setSelectedIndex={setSelectedIndex}
                 btnSound={btnSound}
                 navigate={navigate}
-              /> */}
+              />
             </Grid>
           </Grid>
         </Container>
