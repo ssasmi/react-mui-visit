@@ -3,12 +3,16 @@ import { useLocation } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import "./PaperBase.css";
+import Header from "./Header";
 import Content from "./Content";
+
 
 const drawerWidth = 256;
 const btnSound = () => {
-    let btnAudio = new Audio("/sounds/buttonClick.mp3");
+    let btnAudio = new Audio("/sounds/public_sounds_buttonclick.mp3");
     btnAudio.play();
   };
 
@@ -202,6 +206,13 @@ function PaperBase() {
     );
   }, [colorMain, colorSecondary]);
 
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex", minHeight: "100vh" }}>
@@ -218,7 +229,7 @@ function PaperBase() {
           }}
         >
           Head
-          {/* <Header onDrawerToggle={handleDrawerToggle} btnSound={btnSound} /> */}
+          <Header onDrawerToggle={handleDrawerToggle} btnSound={btnSound} />
           <Box
             component="main"
             sx={{
